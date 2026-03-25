@@ -1,20 +1,75 @@
-<<<<<<< HEAD
-# React + Vite
+# ContractScan AI — Contract Risk Analyzer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Upload any legal document. Get an instant AI-powered risk breakdown in plain English.
 
-Currently, two official plugins are available:
+🔗 **Live Demo**: https://contractscan-ai-three.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## What it does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Most people sign contracts they don't fully understand. ContractScan fixes that.
 
-## Expanding the ESLint configuration
+Upload any PDF contract — NDA, offer letter, lease, employment agreement, terms of service — and get:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# contract-analyzer
->>>>>>> 2fb0f34d0acc5d81d47bd6dd76b66a0e5c8e0974
+- **Risk score** (0–100) weighted by clause severity
+- **Every clause identified** and categorized (IP, Liability, Termination, Payment, etc.)
+- **Plain English explanation** of what each clause actually means
+- **Recommended action** for each flagged clause
+- **Visual dashboard** with risk distribution and category breakdown charts
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React 19 + Vite |
+| AI / LLM | Groq API — LLaMA 3.3 70B |
+| PDF Parsing | pdf.js (Mozilla) |
+| Charts | Recharts |
+| Deployment | Vercel |
+
+**Architecture**: 100% serverless — no backend, no database. PDF parsing and AI inference run entirely client-side and via direct API call.
+
+---
+
+## Features
+
+- Drag-and-drop PDF upload
+- Real-time AI clause extraction and risk classification
+- Interactive dashboard — filter by category and risk level
+- Expandable clause cards with original text + recommendations
+- Works on any legal document type
+
+---
+
+## Run locally
+```bash
+git clone https://github.com/sadiya595/contract-analyzer.git
+cd contract-analyzer
+npm install
+```
+
+Create a `.env` file:
+```
+VITE_GROQ_API_KEY=your_groq_api_key_here
+```
+
+Get your free Groq API key at https://console.groq.com
+```bash
+npm run dev
+```
+
+---
+
+## How it works
+
+1. User uploads a PDF → extracted client-side using **pdf.js**
+2. Raw text sent to **Groq API** with a structured prompt
+3. **LLaMA 3.3 70B** returns JSON array of analyzed clauses
+4. React renders the risk dashboard and clause breakdown
+
+---
+
+Built by [Sadiya Noor](https://github.com/sadiya595)
