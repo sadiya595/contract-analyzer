@@ -1,4 +1,4 @@
-# ContractScan AI — Contract Risk Analyzer
+<img width="1369" height="774" alt="image" src="https://github.com/user-attachments/assets/57e670ff-e10c-4cdb-9967-238be448e5f4" /># ContractScan AI — Contract Risk Analyzer
 
 > Upload any legal document. Get an instant AI-powered risk breakdown in plain English.
 
@@ -34,6 +34,8 @@ Upload any PDF contract — NDA, offer letter, lease, employment agreement, term
 
 ---
 
+
+
 ## Features
 
 - Drag-and-drop PDF upload
@@ -43,6 +45,7 @@ Upload any PDF contract — NDA, offer letter, lease, employment agreement, term
 - Works on any legal document type
 
 ---
+
 
 ## Run locally
 ```bash
